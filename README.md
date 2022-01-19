@@ -9,8 +9,14 @@ MOCHA: es un framework de pruebas para Node JS que puede ejecutarse desde la con
 CHAI: es una librería de aserciones BDD/TDD para Node JS y navegador, que puede ser  emparejado con cualquier framework Javascript.
 
 Para poder utilizar Mocha y Chai debemos instalarlas con el siguiente comando: 
+
 ```
 npm install mocha --save-dev
 
 npm install chai --save-dev
+
 ```
+
+
+
+

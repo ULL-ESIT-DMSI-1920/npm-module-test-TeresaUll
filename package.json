@@ -1,6 +1,33 @@
+
 {
+  
+  "name": "@teresaull/gh-repo-rename",
+  "version": "1.2.5",
+  "description": "Change the name of a repository",
+  "main": "gh-repo-rename.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "doc": "documentation build gh-repo-rename.js -f html -o docs",
+    "serve-doc": "http-server docs/ -o",
+    "push": "npm run doc; git add docs; git commit -am no-message; git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TeresaUll/gh-repo-rename"
+  },
+  "keywords": [
+    "rename"
+  ],
+  "author": "Teresa Bonet <tbonetcosta@gmail.com>",
+
+  "bugs": {
+    "url": "https://github.com/TeresaUll/gh-repo-rename/issues"
+  },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.4"
+    "mocha": "*",
+    "chai": "*",
+    "documentation": "*"
+  },
+  "dependencies": {
   }
 }
