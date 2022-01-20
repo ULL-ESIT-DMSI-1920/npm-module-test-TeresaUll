@@ -6,7 +6,7 @@
   "description": "Change the name of a repository",
   "main": "gh-repo-rename.js",
   "scripts": {
-    "test": "mocha --reporter spec",
+    "test" : "mocha",
     "doc": "documentation build gh-repo-rename.js -f html -o docs",
     "serve-doc": "http-server docs/ -o",
     "push": "npm run doc; git add docs; git commit -am no-message; git push"

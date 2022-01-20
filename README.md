@@ -16,6 +16,9 @@ npm install mocha --save-dev
 npm install chai --save-dev
 
 ```
+Ahora debemos crear un directorio test donde escribiremos nuestros test en un fichero .js. 
+Aquí debemos escribir los tests que comprobarán si nuestro código funciona correctamente, con la sintaxis expect.equal, lo que significa que le diremos lo que se debería esperar que aparezca como respuesta de la función y el test comprobará si es lo mismo, en cuyo caso pasará el test. 
+
 
 
 
