@@ -1,7 +1,8 @@
 
 {
   
-  "name": "@teresaull/gh-repo-rename",
+  
+  "name": "gh-repo-rename",
   "version": "1.2.5",
   "description": "Change the name of a repository",
   "main": "gh-repo-rename.js",
@@ -29,5 +30,8 @@
     "documentation": "*"
   },
   "dependencies": {
+    "comander": "^0.0.1-security",
+    "commander": "^8.3.0",
+    "shelljs": "^0.8.4"
   }
 }
