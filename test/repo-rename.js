@@ -4,16 +4,17 @@ var expect = require('chai').expect(),
 renameRepo = require('../repo-rename')
 
 describe('#Rename', function() {
+  // comprobamos si la función getRepoID funciona correctamente
 it('obtiene el ID', function() {
-renameRepo.getRepoID("ULL-ESIT-DMSI-1920", "pruebaTeresa").expect.equal('431860143\n');
+renameRepo.getRepoID("ULL-ESIT-DMSI-1920", "pruebaTeresa").expect.equal('R_kgDOGb2prw\n');
 });
+// comprobamos si renameRepo funciona correctamente
 it('cambia el nombre del repo', function() {
-  renameRepo.renameRepo("431860143", "pruebaTeresa-nuevo").expect.equal("pruebaTeresa-nuevo");
+  renameRepo.renameRepo("R_kgDOGb2prw", "pruebaTeresaNuevo").expect.equal("pruebaTeresaNuevo");
   });
-
-it('\t repository id is not equal to another repository id', function(){
-    let wrongId = "R_kgDOGbeYPw";
-    assert.notEqual(getRepoId("ULL-ESIT-DMSI-1920", "pruebaTeresa"), wrongId, "Not the right id")
+// probamos que el id no sea diferente que el id correcto con assert 
+it('El repositorio no tiene el id de otro repo', function(){
+    assert.notEqual(renameRepo.getRepoId("ULL-ESIT-DMSI-1920", "pruebaTeresa"), !"R_kgDOGb2prw", "El id no es correcto")
 });
 
 });
