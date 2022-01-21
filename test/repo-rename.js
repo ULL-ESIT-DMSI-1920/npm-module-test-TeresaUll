@@ -1,7 +1,7 @@
 
 
 var should = require('chai').should(),
-renameRepo = require('../gh-repo-rename'),
+renameRepo = require('../gh-repo-rename.js'),
 getId = renameRepo.getRepoId,
 rename = renameRepo.renameRepo,
 assert = require('assert');
