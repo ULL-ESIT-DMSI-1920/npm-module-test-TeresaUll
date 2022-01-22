@@ -17,9 +17,13 @@ npm install chai --save-dev
 
 ```
 Ahora debemos crear un directorio test donde escribiremos nuestros test en un fichero .js. 
-Aquí debemos escribir los tests que comprobarán si nuestro código funciona correctamente, con la sintaxis expect.equal, lo que significa que le diremos lo que se debería esperar que aparezca como respuesta de la función y el test comprobará si es lo mismo, en cuyo caso pasará el test. 
+Aquí debemos escribir los tests que comprobarán si nuestro código funciona correctamente, con la sintaxis should.equal, lo que significa que le diremos lo que se debería esperar que aparezca como respuesta de la función y el test comprobará si es lo mismo, en cuyo caso pasará el test. Aquí vemos los tests escogidos: 
+
+![image](code.png)
+
+Una vez desarrollados los tests, podemos ejecutar npm test, ya que lo hemos declarado en el script en el package.json. El resultado es el siguiente:  
 
 
+![image](test.png)
 
-
-
+Como podemos observar, nos indica claramente con la breve discripción que habíamos indicado que tests han pasado y cuales no.

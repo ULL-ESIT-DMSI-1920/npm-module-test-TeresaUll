@@ -18,10 +18,6 @@ it('cambia el nombre del repo', function() {
   it('cambia el nombre del repo otra vez', function() {
     rename("R_kgDOGb2prw", "pruebaTeresa").should.equal("pruebaTeresa");
     });
-// probamos que el id no sea diferente que el id correcto con assert 
-/*it('El repositorio no tiene el id de otro repo', function(){
-  let wrongid= "huujrurbjh"
-    assert.notEqual(renameRepo.getRepoId("ULL-ESIT-DMSI-1920", "pruebaTeresa"), wrongid, "El id no es correcto")
-});
-*/
+
+
 });
