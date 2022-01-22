@@ -2,9 +2,9 @@ const shell = require('shelljs');
 
 /**
  * gets repo ID
- * @param {string} owner 
- * @param {string} name 
- * @returns ID
+ * @param {string} owner - organization to which the repository belongs   
+ * @param {string} name - name of the repository
+ * @returns the id of the repository
  */
 function getRepoID(owner, name) {
   const queryRepoID = (owner, name) => `
@@ -28,8 +28,8 @@ function getRepoID(owner, name) {
 
 /**
  * Renames repository
- * @param {ID} ID 
- * @param {string} newName 
+ * @param {ID} ID - id of the repository that you want to change the name
+ * @param {string} newName - new name of the repository
  * @returns string
  */
 function renameRepo (ID, newName) {
@@ -63,3 +63,5 @@ module.exports = {
   getRepoID,
   renameRepo
 }
+
+

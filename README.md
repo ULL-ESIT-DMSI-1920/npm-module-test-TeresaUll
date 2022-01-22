@@ -21,8 +21,11 @@ Aquí debemos escribir los tests que comprobarán si nuestro código funciona co
 
 ![image](code.png)
 
-Una vez desarrollados los tests, podemos ejecutar npm test, ya que lo hemos declarado en el script en el package.json. El resultado es el siguiente:  
+Debemos tener en cuenta que para que esto funcione es necesario exportar las funciones para que pueda comprobarse su correcto funcionamiento. Esto lo hacemos de la siguiente manera en el fichero repo-rename.js.
 
+![image](export.png)
+
+Una vez desarrollados los tests, podemos ejecutar npm test, ya que lo hemos declarado en el script en el package.json. El resultado es el siguiente:  
 
 ![image](test.png)
 
