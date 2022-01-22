@@ -30,3 +30,13 @@ Una vez desarrollados los tests, podemos ejecutar npm test, ya que lo hemos decl
 ![image](test.png)
 
 Como podemos observar, nos indica claramente con la breve discripción que habíamos indicado que tests han pasado y cuales no.
+
+## Documentación
+
+Para añadir la documentación de forma automática podemos utilizar JSDoc. JSDoc es una sintaxis para agregar documentación de la API al código fuente de JavaScript. 
+Ejecutaremos el siguiente comando para instalar y generar el documento html con la documentación del código del fichero escogido, en este caso repo-rename.js: 
+```
+npm install -g jsdoc
+jsdoc repo-rename.js
+
+```
