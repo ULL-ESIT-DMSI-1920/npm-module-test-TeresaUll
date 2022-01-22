@@ -40,3 +40,8 @@ npm install -g jsdoc
 jsdoc repo-rename.js
 
 ```
+
+# Actions
+
+Las acciones de Github permiten crear flujos de trabajo personalizados que se dividen en subtareas denominadas acciones. Estas acciones pueden ser desencadenadas por determinados eventos. 
+
