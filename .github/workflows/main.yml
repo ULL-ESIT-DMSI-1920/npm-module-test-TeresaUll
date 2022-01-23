@@ -1,5 +1,5 @@
 
-name: Test for extension gh-repo-rename
+name: Test and publish for extension gh-repo-rename
 
 on:
   push:
@@ -8,16 +8,21 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+    build:
     runs-on: ubuntu-latest
 
-    steps:
+    strategy:
+        # To test if all the functions work properly 
+        matrix:
+        node-version: [12.x]
+
+    steps: # clone the repo, See https://github.com/actions/checkout
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - name: Use Node.js ${{ matrix.node-version }} # Will be: "Use Node.js 12.x"
+        uses: actions/setup-node@v1 # Install node. See https://github.com/actions/setup-node
         with:
-          node-version: ${{ matrix.node-version }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        node-version: ${{ "{{ matrix.node-version" }} }}
+          repo-token: ${{ secrets.GH_TOKEN }}
           cache: 'npm'
           
       - name: "Install dependencies "
