@@ -12,10 +12,10 @@ jobs:
 
         runs-on: ubuntu-latest
 
-        strategy:
+         strategy:
         # To test if all the functions work properly 
-        matrix:
-        node-version: [12.x]
+         matrix:
+         node-version: [12.x]
 
         steps: 
         - uses: actions/checkout@v2
@@ -23,14 +23,14 @@ jobs:
           uses: actions/setup-node@v1 # Install node. See https://github.com/actions/setup-node
           with:
             node-version: ${{ "{{ matrix.node-version" }} }}
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            repo-token: ${{ secrets.GH_TOKEN }}
             cache: 'npm'
             
         - name: "Install dependencies "
           run: npm ci
           
-       - name: "Run Mocha and Chai tests"
-         run: npm test
-         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: "Run test"
+          run: npm test
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
             CI: true
