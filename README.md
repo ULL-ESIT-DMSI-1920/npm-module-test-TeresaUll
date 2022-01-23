@@ -45,3 +45,16 @@ jsdoc repo-rename.js
 
 Las acciones de Github permiten crear flujos de trabajo personalizados que se dividen en subtareas denominadas acciones. Estas acciones pueden ser desencadenadas por determinados eventos. 
 
+Las acciones son el bloque de costrucción más pequeño en el desarrollo del workflow, se combinan para acabar creando un job. 
+
+### Job
+Un job está compuesto por diferentes steps, se puede organizar para que se produzcan de forma independiente o secuencialmente.
+ 
+### Step
+Es una tarea individual que pueden ser comandos o acciones en un job. 
+
+### Event
+Un evento es una actividad que lanza el workflow. 
+
+
+

@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          repo-token: ${{ secrets.TOKEN1 }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           cache: 'npm'
           
       - name: "Install dependencies "
@@ -24,4 +24,4 @@ jobs:
       - name: "Run Mocha and Chai tests"
         run: npm test
         env:
-                  CI: true
+            CI: true
