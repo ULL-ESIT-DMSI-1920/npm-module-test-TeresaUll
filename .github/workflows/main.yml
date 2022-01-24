@@ -9,21 +9,18 @@ on:
 
 jobs:
      build:
-
-          runs-on:  ubuntu-lastest
-          steps: 
-          - uses: actions/checkout@v2
-          - name: Setup Node.js environment
-            uses: actions/setup-node@v2.5.1
-            with:
-              token: ${{ secrets.GH_TOKEN }}
-              
-          - name: Run test
-            run: npm test
+     runs-on: ${{ matrix.os }}
+     strategy:
+      matrix:
+         os: [ubuntu-18.04, ubuntu-20.04]
+         node: [10, 12, 14]
+       steps: 
+       - uses: actions/checkout@v2
+       - uses: actions/setup-node@v2.5.1
+           with:
+             token: ${{ secrets.GH_TOKEN }}
+                
+       - name: Run test
+          run: npm test
             env:
-              GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-<<<<<<< HEAD
-            
-=======
-
->>>>>>> a38f9124f790534d98efb2f9ed38b068a35d8076
+                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
