@@ -8,19 +8,19 @@ on:
     branches: [ main ]
 
 jobs:
-     build:
-     runs-on: ${{ matrix.os }}
-     strategy:
-      matrix:
-         os: [ubuntu-18.04, ubuntu-20.04]
-         node: [10, 12, 14]
-       steps: 
+  build:
+   runs-on: ${{ matrix.os }}
+   strategy:
+     matrix:
+       os: [ubuntu-18.04, ubuntu-20.04]
+       node: [10, 12, 14]
+   steps: 
        - uses: actions/checkout@v2
        - uses: actions/setup-node@v2.5.1
-           with:
+         with:
              token: ${{ secrets.GH_TOKEN }}
                 
        - name: Run test
-          run: npm test
-            env:
-                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+       - run: npm test
+         env:
+           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
