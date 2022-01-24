@@ -23,7 +23,7 @@ jobs:
             env:
               GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 <<<<<<< HEAD
-              CI: true
+            
 =======
 
 >>>>>>> a38f9124f790534d98efb2f9ed38b068a35d8076
