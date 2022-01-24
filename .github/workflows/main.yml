@@ -10,27 +10,23 @@ on:
 jobs:
      build:
 
-        runs-on: ubuntu-latest
+          runs-on:  ${{ matrix.os }}
+            strategy:
+              matrix:
+                os:  [ubuntu-latest, windows-latest, macos-latest]
+              node-version: [12.x]
 
-        strategy:
-        # To test if all the functions work properly 
-        matrix:
-        node-version: [12.x]
+           steps: 
+          - uses: actions/checkout@v2
+          - name: Use Node.js ${{ matrix.node-version }} # Will be: "Use Node.js 12.x"
+            uses: actions/setup-node@v1 # Install node. See https://github.com/actions/setup-node
+            with:
+              node-version: ${{ "{{ matrix.node-version" }} }}
+              repo-token: ${{ secrets.GH_TOKEN }}
+              cache: 'npm'
 
-       steps: # clone the repo, See https://github.com/actions/checkout
-       - uses: actions/checkout@v2
-       - name: Use Node.js ${{ matrix.node-version }} # Will be: "Use Node.js 12.x"
-          uses: actions/setup-node@v1 # Install node. See https://github.com/actions/setup-node
-          with:
-            node-version: ${{ "{{ matrix.node-version" }} }}
-            repo-token: ${{ secrets.GH_TOKEN }}
-            cache: 'npm'
-            
-       - name: "Install dependencies "
-          run: npm ci
-          
-       - name: "Run Mocha and Chai tests"
-         run: npm test
-         env:
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-            CI: true
+          - name: "Run test"
+            run: npm test
+            env:
+              GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+              CI: true
