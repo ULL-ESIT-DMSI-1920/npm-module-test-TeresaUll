@@ -48,6 +48,10 @@ Las acciones de Github permiten crear flujos de trabajo personalizados que se di
 Las acciones son el bloque de costrucción más pequeño en el desarrollo del workflow, se combinan para acabar creando un job. 
 
 Hay numerosas acciones creadas por la comunidad de GitHub que son públicas y cualquiera puede utilizar, esto es muy útil porque es tan sencillo como reutilizar esas acciones y no tenemos ni que implementarlas.
+
+En nuestro caso, crearemos un action que nos permitirá en cada push y pull comprobar los tests que hemos desarrollado con Mocha y Chai.
+Podemos encontrar el código en la carpeta .gothub/workflows, aquí es donde se encuentran las actions de cualquier repositorio.
+
 ### Job
 Un job está compuesto por diferentes steps, se puede organizar para que se produzcan de forma independiente o secuencialmente.
  
@@ -56,6 +60,7 @@ Es una tarea individual que pueden ser comandos o acciones en un job.
 
 ### Event
 Un evento es una actividad que lanza el workflow. 
+
 
 
 
